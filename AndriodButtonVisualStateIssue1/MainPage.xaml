@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AndriodButtonVisualStateIssue1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Button
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                Text="Change Below Button State" />
+
+            <Button
+                x:Name="button"
+                Background="#bbbbbb"
+                BorderColor="Black"
+                HorizontalOptions="Center"
+                Text="Button State = Enabled"
+                TextColor="#27292A">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="#27292A" />
+                                    <Setter Property="ImageSource" Value="trash_fill_light.png" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="#858B8F" />
+                                    <Setter Property="ImageSource" Value="trash_fill_disabled_light.png" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
